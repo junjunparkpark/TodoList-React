@@ -8,7 +8,13 @@ class Todo extends React.Component {
       <div>
         <h1>Todo List</h1>
         <form onSubmit={this.props.handleSubmit} >
-          <input onChange={this.props.handleValueChange}/>
+          <input onChange={function(event) { this.props.handleValueChange(event) }} />
+
+          {
+            {/* window.on('change', function(event) {
+              this.props.handleValueChange(event)
+            }) */}
+          }
           <button>Add Todo</button>
         </form>
       </div>
